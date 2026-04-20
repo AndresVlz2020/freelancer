@@ -136,7 +136,7 @@ body{
      display: flex;
      flex-direction: column;
      margin: 0 auto;
-     padding: 6px 0;
+     padding: 0 auto;
      width: 100%;
      list-style: none;
     
@@ -160,7 +160,16 @@ body{
      }
 
      .navbar__link:hover {
-          color: var()
+          color: var(--secondary-300);
      }
+}
+
+.navbar__link.active {
+     background-color:var(--white);
+     color: var(--primary-950);
+     font-weight: bold;
+     border-radius: 0.6rem;
+     padding: 8px 24px;
+     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
