@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const navbarElement = document.querySelector(".navbar-container")
 
     if(navbarElement){
-        fetch("/styles/components/navbar.html")
+        fetch("/views/components/navbar.html")
         // La respuesta la convierte a texto plano
         .then(response => response.text())
         // Inserta el contenido HTML del navbar en el contenedor correspondiente
@@ -10,22 +10,20 @@ document.addEventListener("DOMContentLoaded", function(){
             navbarElement.innerHTML = data
         
     
-        const currentPage = window.location.pathname.split("/").pop() || "index.html"
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-        const navLinks = navbarElement.querySelectorAll(".navbar__link")
+        const navLinks = navbarElement.querySelectorAll(".navbar__link");
 
         navLinks.forEach(link => {
-            if (link.getAttribute("href").includes(currentPage)) {
-                link.classList.add("active")
+            if (link.getAttribute("href")?.includes(currentPage)) {
+                link.classList.add("active");
             
-
-            }
+            
+                }
         })
-
+    
         })
 
         .catch(error => console.log("Error cargando el navbar", error));
-
     }
-    
-})
+});
